@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>chess</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    div#wrapper {
+      position: relative;
+      width: 800px;
+      height: 800px;
+      /* border: 1px solid #ccc; */
+      margin: 100px auto;
+    }
+    table {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-spacing: 0;
+      /* border: 1px solid #000; */
+    }
+    td {
+      width: 100px;
+      height: 100px;
+    }
+    tr:nth-of-type(odd) td:nth-child(odd) {
+      background-color: #FFC794;
+    }
+    tr:nth-of-type(odd) td:nth-child(even) {
+      background-color: #CB803E;
+    }
+    tr:nth-of-type(even) td:nth-child(odd) {
+      background-color: #CB803E;
+    }
+    tr:nth-of-type(even) td:nth-child(even) {
+      background-color: #FFC794;
+    }
+    td {
+      transition: all .2s;
+    }
+    td:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <table>
+      <tr>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
