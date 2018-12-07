@@ -25,8 +25,21 @@ let WG = (function () {
     }
   }
 
+  // 节流函数
+  // 第一个参数: 想要节流的函数
+  // 第二个参数: 函数执行上下文
+  function throttle(method, context) {
+    if (method.tId) {
+      clearTimeout(method.tId);
+    }
+    method.tId = setTimeout(function() {
+      method.call(context);
+    }, 200);
+  }
+
   return {
     getRandomNumber,
-    forEach
+    forEach,
+    throttle
   };
 })();
