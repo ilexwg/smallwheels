@@ -76,6 +76,17 @@ let WG = (function () {
       } else {
         event.cancelBubble = true;
       }
+    },
+    getRelatedTarget(event) {
+      if (event.relatedTarget) {
+        return event.relatedTarget;
+      } else if (event.toElement) {
+        return event.toElement;
+      } else if (event.fromElement) {
+        return event.fromElement;
+      } else {
+        return null;
+      }
     }
   };
 
