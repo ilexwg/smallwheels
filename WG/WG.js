@@ -37,9 +37,32 @@ let WG = (function () {
     }, 200);
   }
 
+  //通用事件处理函数
+  let event = {
+    addHandler(ele, type, handler) {
+      if (ele.addEventListener) {
+        ele.addEventListener(type, handler, false);
+      } else if (ele.attachEvent) {
+        ele.attachEvent('on' + type, handler);
+      } else {
+        ele['on' + type] = handler;
+      }
+    },
+    removeHandler(ele, type, handler) {
+      if (ele.removeEventListener) {
+        ele.removeEventListener(type, handler, false);
+      } else if (ele.detachEvent) {
+        ele.detachEvent('on' + type, handler);
+      } else {
+        ele['on' + type] = null;
+      }
+    }
+  };
+
   return {
     getRandomNumber,
     forEach,
-    throttle
+    throttle,
+    event
   };
 })();
