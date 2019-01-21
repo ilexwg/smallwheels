@@ -37,6 +37,23 @@ let WG = (function () {
     }, 200);
   }
 
+  // 给任意位的数字每3位添加逗号
+  // 第一个参数: 想要转换的数字
+  // return: 转换后的数字字符串
+  // 遗留问题: 当数字很大的时候, 会以科学计数法显示数字, 此时会有问题
+  function addComma(num) {
+    if (typeof num === 'number') {
+      num = String(num);
+    }
+    let length = num.length;
+    let numOfCommas = parseInt(length / 4, 10);
+    num = num.split('');
+    for (var i = 0; i < numOfCommas; i++) {
+      num.splice(length - 3 * (i + 1), 0, ',');
+    }
+    return num.join('');
+  }
+
   //通用事件处理函数
   let event = {
     addHandler(ele, type, handler) {
