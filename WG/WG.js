@@ -1,5 +1,36 @@
 let WG = (function () {
 
+  // 返回长度一致的随机字符串
+  function getRandom(width) {
+    let random = Math.random();
+    random = random + '0'.repeat(width);
+    return random.slice(0, width);
+  }
+
+  // 格式化时间
+  // 返回: '2019-01-02' 格式的时间
+  formatDate(dt) {
+    if (!dt) {
+      dt = new Date();
+    }
+
+    const year = dt.getFullYear();
+    let month = dt.getMonth() + 1;
+    const day = dt.getDate();
+
+    if (month < 10) {
+      month = '0' + month;
+    }
+
+    if (day < 10) {
+      day = '0' + day;
+    }
+
+    const date = `${year}-${month}-${day}`;
+
+    return date;
+  }
+
   // 获取随机数字字符串, 每次获取到的结果都是指定位数的, 默认返回10位
   // 参数: 字符串的长度
   function getRandomNumber(length = 10) {
