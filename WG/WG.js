@@ -1,5 +1,20 @@
 let WG = (function () {
 
+  // 可以同时处理数组和对象的 forEach
+  function forEach(obj, fn) {
+    if (Array.isArray(obj)) {
+      obj.forEach((item, index) => {
+        fn(index, item);
+      });
+    } else {
+      for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          fn(key, obj[key]);
+        }
+      }
+    }
+  }
+
   // 返回长度一致的随机字符串
   function getRandom(width) {
     let random = Math.random();
